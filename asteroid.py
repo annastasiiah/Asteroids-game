@@ -3,6 +3,7 @@ import random
 from logger import log_event
 from circleshape import CircleShape
 from constants import LINE_WIDTH, ASTEROID_MIN_RADIUS
+from explosion import Explosion
 
 class Asteroid(CircleShape):
     def __init__(self, x: float, y: float, radius: float) -> None:
@@ -16,6 +17,8 @@ class Asteroid(CircleShape):
 
     def split(self):
         self.kill()
+
+        Explosion(self.position.x, self.position.y)
 
         if self.radius <= ASTEROID_MIN_RADIUS:
             return

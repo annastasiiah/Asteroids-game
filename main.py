@@ -8,6 +8,7 @@ from asteroidfield import AsteroidField
 from asteroid import Asteroid
 from logger import log_event
 from shot import Shot
+from explosion import Explosion
 
 def main():
     pygame.init()
@@ -29,6 +30,7 @@ def main():
     Asteroid.containers = (asteroids, updatable, drawable)
     Player.containers = (updatable, drawable)
     Shot.containers = (shots, updatable, drawable)
+    Explosion.containers = (updatable, drawable)
 
     AsteroidField.containers = updatable
 
